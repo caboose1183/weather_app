@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Country, City } from "country-state-city";
 import Select from "react-select";
 import { useRouter } from "next/navigation";
@@ -50,9 +50,9 @@ function CityPicker() {
 
   const handleSelectedCity = (option: cityOption) => {
     setSelectedCity(option);
-    // router.push(
-    //   `/location/${option?.value.latitude}/${option?.value.longitude}`
-    // );
+    router.push(
+      `/${option?.value.name}/${option?.value.latitude}/${option?.value.longitude}`
+    );
   };
 
   return (
